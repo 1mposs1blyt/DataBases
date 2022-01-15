@@ -28,8 +28,19 @@ app.get("/", (request, response) => {
 })
 
 
-
+"/tovary/:type/:custom" => "/tovary/TovarTypes/TovarTypeCPU"
 
 app.listen(port, function () {
     console.log(`Server stated on: http://${hostname}:${port}`)
 });
+
+all = {
+    "TovarTypes":{
+        "TovarTypeCPU":{...}
+        "TovarTypeRAM":{...}
+        "TovarTypeMotherBoards":{}
+    }
+}
+type = request.params["type"]
+custom = request.params["custom"]
+data = all[type][custom]
